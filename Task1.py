@@ -26,6 +26,22 @@
 
 # 3) Узнайте у пользователя число n. Найдите сумму чисел n + nn + nnn.
 # Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369
-n = int(input("Введите значение n:"))
-result = n + int(str(n) + str(n)) + int(str(n) + str(n) + str(n))
-print(f"Сумма n+nn+nnn равна : {result}")
+# n = int(input("Введите значение n:"))
+# result = n + int(str(n) + str(n)) + int(str(n) + str(n) + str(n))
+# print(f"Сумма n+nn+nnn равна : {result}")
+
+# 4) Пользователь вводит целое положительное число.
+# Найдите самую большую цифру в числе.
+# Для решения используйте цикл while и арифметические операции.
+
+number = abs(int(input("Введите целое положительное число: ")))
+max_digit = number % 10
+while number >= 1:
+    number = number // 10
+    if number % 10 > max_digit:
+        max_digit = number % 10
+    if number > 9:
+        continue
+    else:
+        print(f"Максимальное цифра в числе {max_digit}")
+        break
