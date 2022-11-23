@@ -34,14 +34,34 @@
 # Найдите самую большую цифру в числе.
 # Для решения используйте цикл while и арифметические операции.
 
-number = abs(int(input("Введите целое положительное число: ")))
-max_digit = number % 10
-while number >= 1:
-    number = number // 10
-    if number % 10 > max_digit:
-        max_digit = number % 10
-    if number > 9:
-        continue
-    else:
-        print(f"Максимальное цифра в числе {max_digit}")
-        break
+# number = abs(int(input("Введите целое положительное число: ")))
+# max_digit = number % 10
+# while number >= 1:
+#     number = number // 10
+#     if number % 10 > max_digit:
+#         max_digit = number % 10
+#     if number > 9:
+#         continue
+#     else:
+#         print(f"Максимальное цифра в числе {max_digit}")
+#         break
+
+# 5)Запросите у пользователя значения выручки и издержек фирмы. Определите,
+# с каким финансовым результатом работает фирма (прибыль — выручка больше
+# издержек, или убыток — издержки больше выручки). Выведите соответствующее
+# сообщение. Если фирма отработала с прибылью, вычислите рентабельность
+# выручки (соотношение прибыли к выручке). Далее запросите численность
+# сотрудников фирмы и определите прибыль фирмы в расчете на одного сотрудника.
+profit = float(input("Введите значение выручки: "))
+expenses = float(input("Введите значение издержек: "))
+
+if profit > expenses:
+    rentability = (profit - expenses) / profit
+    print(f"Фирма работает в прибыль {rentability}")
+    staff = int(input("Введите количество сотрудников: "))
+    coefficient = rentability / staff
+    print(f"Прибыль на одного сотрудника {coefficient} ")
+elif profit == expenses:
+    print("Фирма работает в ноль")
+else:
+    print(f"Фирма работает в убыток")
